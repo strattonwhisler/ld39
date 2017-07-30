@@ -60,6 +60,7 @@ export class LD39 extends Game {
     private darkness: Darkness;
     public neonNode: Node;
     private blackout: boolean;
+    private blackoutTimer: number;
 
     public frontNode: Node;
 
@@ -98,7 +99,7 @@ export class LD39 extends Game {
 
         this.ticksWithoutObstacle = 0;
 
-        this.powerLevel = 1;
+        this.powerLevel = 0.3;
         this.powerTick = 0;
         this.powerNode = new Node();
 
@@ -115,6 +116,7 @@ export class LD39 extends Game {
         this.darkness = new Darkness(this);
         this.neonNode = new Node();
         this.blackout = false;
+        this.blackoutTimer = 0;
 
         this.frontNode = new Node();
 
@@ -161,6 +163,7 @@ export class LD39 extends Game {
         this.powerLevel = 1;
         this.powerTick = 0;
         this.blackout = false;
+        this.blackoutTimer = 0;
         this.darkness.level = 1 - this.powerLevel;
 
         this.distance = 0;
@@ -257,10 +260,10 @@ export class LD39 extends Game {
                 } else if(this.powerLevel <= 0.1) {
                     this.blackout = true;
                 } else {
-                    if(Math.random() < 0.25) {
-                        this.blackout = true;
-                    } else {
-                        this.blackout = false;
+                    this.blackoutTimer -= delta;
+                    if(this.blackoutTimer <= 0) {
+                        this.blackout = !this.blackout;
+                        this.blackoutTimer = Math.random() * 0.5;
                     }
                 }
 

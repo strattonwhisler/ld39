@@ -459,7 +459,7 @@ var LD39 = (function (_super) {
         this.obstacleTypeI = this.obstacleTypeG();
         this.obstacleNode = new node_1.Node();
         this.ticksWithoutObstacle = 0;
-        this.powerLevel = 1;
+        this.powerLevel = 0.3;
         this.powerTick = 0;
         this.powerNode = new node_1.Node();
         this.bgClouds1 = new bgClouds_1.BgClouds(this.player, 0, '');
@@ -473,6 +473,7 @@ var LD39 = (function (_super) {
         this.darkness = new darkness_1.Darkness(this);
         this.neonNode = new node_1.Node();
         this.blackout = false;
+        this.blackoutTimer = 0;
         this.frontNode = new node_1.Node();
         // Add in order of render (back to front)
         this.rootNode.addChild(this.bgClouds1);
@@ -507,6 +508,7 @@ var LD39 = (function (_super) {
         this.powerLevel = 1;
         this.powerTick = 0;
         this.blackout = false;
+        this.blackoutTimer = 0;
         this.darkness.level = 1 - this.powerLevel;
         this.distance = 0;
         this.player.position = new vector_1.Vector(125, -305);
@@ -586,11 +588,10 @@ var LD39 = (function (_super) {
                     this.blackout = true;
                 }
                 else {
-                    if (Math.random() < 0.25) {
-                        this.blackout = true;
-                    }
-                    else {
-                        this.blackout = false;
+                    this.blackoutTimer -= delta;
+                    if (this.blackoutTimer <= 0) {
+                        this.blackout = !this.blackout;
+                        this.blackoutTimer = Math.random() * 0.5;
                     }
                 }
                 if (this.powerLevel <= 0) {
@@ -1479,13 +1480,13 @@ exports.BgFactories = BgFactories;
 /* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "6ba0833675316fc1e397bf10fe24ee22.png";
+module.exports = __webpack_require__.p + "4acba708fdc7fe7c63f255d6963ea3de.png";
 
 /***/ }),
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "7a2f4aed8713aeb8a6557eb9401f125c.png";
+module.exports = __webpack_require__.p + "c2916726001f29aa4b3c0bed99462109.png";
 
 /***/ }),
 /* 30 */

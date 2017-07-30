@@ -1,0 +1,20 @@
+{
+    "name": "ld39",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Stratton Whisler",
+    "license": "MIT",
+    "scripts": {
+        "build": "webpack",
+        "build-watch": "webpack --watch"
+    },
+    "devDependencies": {
+        "file-loader": "^0.11.2",
+        "html-loader": "^0.5.0",
+        "html-webpack-plugin": "^2.29.0",
+        "json-loader": "^0.5.7",
+        "ts-loader": "^2.3.2",
+        "typescript": "^2.4.2",
+        "webpack": "^3.4.1"
+    }
+}

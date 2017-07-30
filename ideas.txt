@@ -1,0 +1,32 @@
+Free Runner
+
+Gameplay
+ - Dodge obstacles
+ - As you go along the power is running low
+ - (Flip switches?) to keep the power plant running
+
+Style
+ - Neon lights
+ - Factory City
+
+Obstacles
+ - A
+    _
+    _
+    _
+    #
+ - B
+    #
+    #
+    _
+    _
+ - C
+    _
+    _
+    #
+    #
+ - D
+    #
+    #
+    #
+    _

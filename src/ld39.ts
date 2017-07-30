@@ -99,7 +99,7 @@ export class LD39 extends Game {
 
         this.ticksWithoutObstacle = 0;
 
-        this.powerLevel = 0.3;
+        this.powerLevel = 1;
         this.powerTick = 0;
         this.powerNode = new Node();
 

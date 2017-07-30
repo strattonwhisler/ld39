@@ -285,6 +285,8 @@ export class LD39 extends Game {
                     this.pause.position.x = -this.rootNode.globalPosition.x;
                     this.rootNode.addChild(this.pause);
                     this.player.doUpdate = false;
+                    this.bgFactories1.parallax = false;
+                    this.bgFactories2.parallax = false;
                 }
                 if(!input.isDown('Escape')) {
                     this.lastKey['pause'] = false;
@@ -298,6 +300,8 @@ export class LD39 extends Game {
                     this.state = 'game';
                     this.rootNode.removeChild(this.pause);
                     this.player.doUpdate = true;
+                    this.bgFactories1.parallax = true;
+                    this.bgFactories2.parallax = true;
                 }
                 if(!input.isDown('Escape')) {
                     this.lastKey['pause'] = false;
